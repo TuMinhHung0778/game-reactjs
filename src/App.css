@@ -2,37 +2,43 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.controls {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.game-area {
+  position: relative;
+  width: 500px; /* Kích thước mới */
+  height: 500px; /* Kích thước mới */
+  border: 2px solid black;
+  margin: 20px auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.circle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: blue; /* Màu xanh dương mặc định */
+  border: 2px solid black;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 16px;
+  color: white; /* Màu chữ mặc định */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+/* Màu đỏ khi người chơi rê chuột qua vòng tròn */
+.circle:hover {
+  background-color: red;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Khi vòng tròn bị click đúng thì ẩn nó */
+.circle.cleared {
+  display: none;
 }
